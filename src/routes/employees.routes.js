@@ -1,0 +1,16 @@
+import { Router } from "express";
+import { getEmployees, createEmployee, updateEmployee, deleteEmployee, getEmployee } from '../controllers/employees.controller.js'
+
+const router = Router()
+
+router.get('/employees', getEmployees)
+
+router.get('/employee/:id', getEmployee)
+
+router.post('/employees', createEmployee)
+
+router.patch('/employees/:id', updateEmployee)//PATCH puede actualizar solo un dato de la tabla
+
+router.delete('/employees/:id', deleteEmployee)
+
+export default router
